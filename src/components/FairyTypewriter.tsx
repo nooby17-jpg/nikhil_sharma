@@ -1,50 +1,48 @@
 "use client";
 import { motion } from "framer-motion";
 
-interface Props {
-  text: string;
-  delay?: number;
-  className?: string;
-}
+const container = {
+  hidden: { opacity: 0 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    transition: { staggerChildren: 0.12, delayChildren: 0.04 * i },
+  }),
+};
 
-export default function FairyTypewriter({ text, delay = 0, className = "" }: Props) {
-  // Split text into characters (preserving spaces)
-  const letters = Array.from(text);
-
-  const container = {
-    hidden: { opacity: 0 },
-    visible: (i = 1) => ({
-      opacity: 1,
-      transition: { staggerChildren: 0.05, delayChildren: delay } // Adjust speed here
-    })
-  };
-
-  const child = {
-    visible: {
-      opacity: 1,
-      y: 0,
-      filter: "blur(0px)",
-      transition: {
-        type: "spring",
-        damping: 12,
-        stiffness: 100
-      }
+const child = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      type: "spring" as const,
+      damping: 12,
+      stiffness: 100,
     },
-    hidden: {
-      opacity: 0,
-      y: 20,
-      filter: "blur(10px)", // The "fairy" blur effect
-    }
-  };
+  },
+  hidden: {
+    opacity: 0,
+    y: 20,
+    filter: "blur(10px)",
+    transition: {
+      type: "spring" as const, 
+      damping: 12,
+      stiffness: 100,
+    },
+  },
+};
+
+export default function FairyTypewriter({ text, delay = 0 }: { text: string, delay?: number }) {
+  const letters = Array.from(text);
 
   return (
     <motion.div
-      style={{ overflow: "hidden", display: "flex", flexWrap: "wrap" }}
+      style={{ display: "flex", overflow: "hidden" }}
       variants={container}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className={className}
+      custom={delay}
     >
       {letters.map((letter, index) => (
         <motion.span variants={child} key={index} style={{ marginRight: letter === " " ? "0.25em" : "0" }}>
