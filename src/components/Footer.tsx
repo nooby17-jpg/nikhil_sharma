@@ -9,20 +9,20 @@ export default function Footer() {
         <h2 className="font-oswald text-4xl md:text-6xl uppercase leading-[0.9]">
           Let's Create <br/> The Future.
         </h2>
-        <a 
+        <Link 
           href="/contact" 
           className="text-gray-500 hover:text-white transition-colors font-mono text-sm mt-4"
         >
           DROP ME A LINE ↗
-        </a>
+        </Link>
       </div>
 
       <div className="flex gap-12 text-xs font-mono text-gray-500 uppercase tracking-widest">
         <div className="flex flex-col gap-2">
           <span className="text-white mb-2">Socials</span>
-          <Link href="/https://www.linkedin.com/in/nikhil-sharma-3906751a0/" className="hover:text-white transition-colors">LinkedIn</Link>
-          <Link href="/https://github.com/nooby17-jpg" className="hover:text-white transition-colors">GitHub</Link>
-          <Link href="/https://www.kaggle.com/nikhilsharma1212" className="hover:text-white transition-colors">Kaggle</Link>
+          <Link href="https://www.linkedin.com/in/nikhil-sharma-3906751a0/" target="_blank" className="hover:text-white transition-colors">LinkedIn</Link>
+          <Link href="https://github.com/nooby17-jpg"   target="_blank" className="hover:text-white transition-colors">GitHub</Link>
+          <Link href="https://www.kaggle.com/nikhilsharma1212"   target="_blank" className="hover:text-white transition-colors">Kaggle</Link>
         </div>
         
         <div className="flex flex-col gap-2">
