@@ -8,7 +8,7 @@ import ProjectCard from "@/components/ProjectCard";
 import HeroCanvas from "@/components/HeroCanvas";
 export default function AboutPage() {
   const container = useRef(null);
-
+  const BASE_PATH = '/nikhil_sharma';
   return (
     <main ref={container} className="min-h-screen bg-[#0a0a0a] w-full selection:bg-white selection:text-black">
 
@@ -42,7 +42,7 @@ export default function AboutPage() {
               
                <div className="relative shrink-0 w-24 h-24 md:w-40 md:h-40 rounded-full overflow-hidden border border-[#333] grayscale hover:grayscale-0 transition-all duration-500">
                     <Image 
-                        src="/dp.png" 
+                        src={`${BASE_PATH}/dp.png`}
                         alt="Nikhil Sharma"
                         fill
                         className="object-cover"
@@ -113,12 +113,12 @@ export default function AboutPage() {
                  <span className="text-sm font-inter text-gray-500">(04) SELECTED WORKS</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 w-full">
-                <ProjectCard id="01" title="3D Model Generation" tech="Python / AI / Deep Learning" image="/3dgen.jpg" />
-                <ProjectCard id="02" title="Sign Language Translator" tech="LSTM / CNN / Comp. Vision" image="/sign.png" />
-                <ProjectCard id="03" title="SpaceX Data Analysis" tech="Python / R / Data Viz" image="/space.jpg" />
-                <ProjectCard id="04" title="Predictive Dashboard" tech="Python / React / D3.js" image="/aidash.jpg" />
-                <ProjectCard id="05" title="Avya AI Medical Assistant" tech="Electron, Vite, Python, AI" image="/avya.jpg" />
-                <ProjectCard id="06" title="Nikhil Portfolio" tech="Next.js / GSAP / WebGL" image="/portfolio.jpg" />
+                <ProjectCard id="01" title="3D Model Generation" tech="Python / AI / Deep Learning" image={`${BASE_PATH}/3dgen.jpg`} />
+                <ProjectCard id="02" title="Sign Language Translator" tech="LSTM / CNN / Comp. Vision" image={`${BASE_PATH}/sign.png`} />
+                <ProjectCard id="03" title="SpaceX Data Analysis" tech="Python / R / Data Viz" image={`${BASE_PATH}/space.jpg"`} />
+                <ProjectCard id="04" title="Predictive Dashboard" tech="Python / React / D3.js" image={`${BASE_PATH}/aidash.jpg`} />
+                <ProjectCard id="05" title="Avya AI Medical Assistant" tech="Electron, Vite, Python, AI" image={`${BASE_PATH}/avya.jpg`} />
+                <ProjectCard id="06" title="Nikhil Portfolio" tech="Next.js / GSAP / WebGL" image={`${BASE_PATH}/portfolio.jpg`} />
             </div>
           </div>
 

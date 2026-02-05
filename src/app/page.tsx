@@ -5,6 +5,7 @@ import HeroCanvas from "@/components/HeroCanvas"; // New Background
 import FairyTypewriter from "@/components/FairyTypewriter"; // New Text Effect
 
 export default function Home() {
+    const BASE_PATH = '/nikhil_sharma';
   return (
     <main className="min-h-screen w-full relative">
       
@@ -53,25 +54,25 @@ export default function Home() {
             id="01"
             title= "3D Model Generation"
             tech= "Python, Django, React, Three.js"
-            image= "/3dgen.jpg"
+            image={`${BASE_PATH}/3dgen.jpg`}
           />
           <ProjectCard 
             id="02" 
             title="Avya AI Medical Assistant" 
             tech="Electron, Vite, Python, AI" 
-            image="/avya.jpg" 
+            image={`${BASE_PATH}/avya.jpg`} 
           />
           <ProjectCard 
             id="03" 
             title="Sign Language Gen" 
             tech="DL, LSTM, Python, Streamlit" 
-            image="/sign.png" 
+            image={`${BASE_PATH}/sign.png`} 
           />
           <ProjectCard 
             id="04" 
             title="Creative Portfolio V1" 
             tech="GSAP / WebGL / Three.js" 
-            image="/portfolio.jpg" 
+            image={`${BASE_PATH}/portfolio.jpg`} 
           />
         </div>
       </section>

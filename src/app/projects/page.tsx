@@ -11,14 +11,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
 import HeroCanvas from "@/components/HeroCanvas";
 gsap.registerPlugin(ScrollTrigger);
-
+const BASE_PATH = '/nikhil_sharma';
 const projects = [
   {
     id: "01",
     category: "DL / AI",
     title: "3D Model Generation",
     tech: "Python, Django, React, Three.js",
-    image: "/3dgen.jpg",
+    image: `${BASE_PATH}/3dgen.jpg`,
     year: "2025"
   },
   {
@@ -26,7 +26,7 @@ const projects = [
     category: "Computer Vision",
     title: "Real-time Object Detection",
     tech: "PyTorch, OpenCV, CUDA",
-    image: "/rtob.png",
+    image: `${BASE_PATH}/rtob.png`,
     year: "2024"
   },
   {
@@ -34,7 +34,7 @@ const projects = [
     category: "DL, RWA",
     title: "Sign Language Live Caption Generator",
     tech: "DL, LSTM, Python, Streamlit",
-    image: "/sign.png",
+    image: `${BASE_PATH}/sign.png`,
     year: "2025"
   },
   {
@@ -42,7 +42,7 @@ const projects = [
     category: "Creative Dev , AI",
     title: "Avya AI Medical Assitant",
     tech: "Electron, Vite, Python",
-    image: "/avya.jpg",
+    image: `${BASE_PATH}/avya.jpg`,
     year: "2026"
   },
   {
@@ -50,7 +50,7 @@ const projects = [
     category: "ML / AI",
     title: "Predictive Analytics Dashboard",
     tech: "Python, React, D3.js",
-    image: "/aidash.jpg", 
+    image: `${BASE_PATH}/aidash.jpg`, 
     year: "2023"
   },
    {
@@ -58,7 +58,7 @@ const projects = [
     category: "Data Analytics / Research",
     title: "SpaceX Landing & Launch deep analysis",
     tech: "Python, R, Jupyter",
-    image: "/space.jpg", 
+    image: `${BASE_PATH}/space.jpg`, 
     year: "2022"
   },
 ];
