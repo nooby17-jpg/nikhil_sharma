@@ -24,8 +24,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* RIGHT COLUMN: DESCRIPTION */}
-        {/* Added: items-center md:items-end, text-center md:text-right */}
+       
         <div className="flex flex-col justify-start md:justify-end pb-12 items-start md:items-end text-left md:text-right gap-6 z-10 pointer-events-none -mt-10 md:mt-0">
           <div className="font-inter text-gray-300 max-w-sm text-lg md:text-base leading-relaxed">
             <br/>
@@ -42,13 +41,13 @@ export default function Home() {
 
       <About />
 
-      {/* SELECTED WORKS */}
+      
       <section className="w-full" id="projects">
         <div className="py-8 px-6 md:px-12 border-b border-[#333] flex justify-between items-center">
           <span className="text-sm font-inter text-gray-500">(03) SELECTED WORKS</span>
         </div>
 
-        {/* Mobile: 1 Column, Desktop: 2 Columns */}
+        
         <div className="grid grid-cols-1 md:grid-cols-2 w-full">
           <ProjectCard 
             id="01"

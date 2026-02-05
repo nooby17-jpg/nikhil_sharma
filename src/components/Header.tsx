@@ -35,12 +35,12 @@ export default function Header() {
     <header 
         className={`fixed top-0 left-0 w-full z-50 flex justify-between items-start text-[#ededed] pointer-events-none transition-all duration-500 ease-[0.76, 0, 0.24, 1]
         ${isScrolled 
-            ? "py-4 px-6 md:px-12 bg-[#0a0a0a]/60 backdrop-blur-md border-b border-white/10 shadow-lg" // Scrolled State
-            : "p-6 md:p-12 mix-blend-difference bg-transparent" // Top State
+            ? "py-4 px-6 md:px-12 bg-[#0a0a0a]/60 backdrop-blur-md border-b border-white/10 shadow-lg"
+            : "p-6 md:p-12 mix-blend-difference bg-transparent"
         }`}
     >
       
-      {/* Logo */}
+      
       <div className="flex flex-col text-sm font-medium leading-tight pointer-events-auto cursor-pointer z-50 group">
         <Link href="/">
             <span className="font-bold tracking-tight group-hover:text-gray-400 transition-colors">NIKHIL SHARMA</span>
@@ -50,7 +50,6 @@ export default function Header() {
         </Link>
       </div>
 
-      {/* Desktop Navigation */}
       <nav className="hidden md:block pointer-events-auto">
         <ul className="flex gap-8 text-sm font-medium tracking-wide">
           <NavLink href="/projects">PROJECTS</NavLink>
@@ -59,13 +58,11 @@ export default function Header() {
         </ul>
       </nav>
 
-      {/* Location / Time */}
       <div className="hidden md:block text-right text-xs uppercase tracking-widest opacity-70">
         INDIA <br /> 
         <span className={`${isScrolled ? 'hidden' : 'inline'}`}>IST {time}</span>
       </div>
 
-      {/* Mobile Menu Button */}
       <div 
         onClick={toggleMenu}
         className="md:hidden text-sm cursor-pointer pointer-events-auto font-mono uppercase z-50 hover:opacity-60 transition-opacity"
@@ -74,7 +71,7 @@ export default function Header() {
       </div>
     </header>
 
-    {/* Mobile Menu Overlay */}
+   
     <AnimatePresence>
       {isMenuOpen && (
         <motion.div 
@@ -100,15 +97,14 @@ export default function Header() {
   );
 }
 
-// --- Helper Component for the Animated Strikethrough ---
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
     return (
       <li>
         <Link href={href} className="relative group inline-block">
-            {/* The Text */}
+        
             <span className="relative z-10">{children}</span>
             
-            {/* The Animated Line */}
+          
             <span className="absolute left-0 top-1/2 block h-[2px] w-0 bg-[#ededed] transition-[width] duration-300 ease-out group-hover:w-full -translate-y-1/2"></span>
         </Link>
       </li>

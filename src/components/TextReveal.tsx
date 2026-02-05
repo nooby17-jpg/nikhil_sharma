@@ -13,7 +13,7 @@ export default function TextReveal({ text, className }: { text: string, classNam
   useGSAP(() => {
     gsap.fromTo(
       textRef.current,
-      { y: "100%", opacity: 0 }, // Changed y to percentage for better responsiveness
+      { y: "100%", opacity: 0 }, 
       {
         y: 0,
         opacity: 1,
@@ -21,7 +21,7 @@ export default function TextReveal({ text, className }: { text: string, classNam
         ease: "power4.out",
         scrollTrigger: {
           trigger: container.current,
-          start: "top 90%", // Trigger slightly earlier
+          start: "top 90%", 
           toggleActions: "play none none reverse",
         },
       }
@@ -29,8 +29,6 @@ export default function TextReveal({ text, className }: { text: string, classNam
   }, { scope: container });
 
   return (
-    // ADDED 'pb-2' HERE -> This prevents the bottom clipping
-    // ADDED 'pr-2' -> Prevents right-side clipping for wide letters
     <div ref={container} className={`overflow-hidden pb-2 pr-2 ${className}`}>
       <div ref={textRef} className="translate-y-full">
         {text}

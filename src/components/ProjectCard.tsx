@@ -32,7 +32,7 @@ export default function ProjectCard({ id, title, tech, image }: ProjectProps) {
         </motion.div>
       </div>
 
-      {/* Content Layer */}
+
       <div className="absolute inset-0 z-10 p-6 md:p-8 flex flex-col justify-between pointer-events-none mix-blend-difference text-white">
         <div className="flex justify-between w-full font-oswald text-xl md:text-2xl uppercase">
           <span className="group-hover:translate-x-2 transition-transform duration-500">{title}</span>

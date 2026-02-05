@@ -97,7 +97,6 @@ export default function ProjectsPage() {
           </div>
       </section>
 
-      {/* FEATURED GRID */}
       <section className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 w-full">
           {projects.map((p) => (
@@ -112,7 +111,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* ARCHIVE / LIST VIEW */}
+    
       <section className="px-6 md:px-12 py-20 border-t border-[#333]">
         <div className="flex justify-between items-end mb-12">
             <h3 className="font-oswald text-4xl uppercase">Archive</h3>

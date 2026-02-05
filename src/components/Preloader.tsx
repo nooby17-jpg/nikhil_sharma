@@ -7,15 +7,15 @@ export default function Preloader() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Determine speed based on remaining percentage to create "easing" effect
+
     const interval = setInterval(() => {
       setCount((prev) => {
         if (prev === 100) {
           clearInterval(interval);
-          setTimeout(() => setIsLoading(false), 500); // Small delay at 100%
+          setTimeout(() => setIsLoading(false), 500);
           return 100;
         }
-        // Random increment between 1 and 10 for organic loading feel
+
         const jump = Math.floor(Math.random() * 10) + 1;
         return Math.min(prev + jump, 100);
       });

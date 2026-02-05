@@ -13,7 +13,6 @@ export default function ContactPage() {
   const container = useRef(null);
   const [status, setStatus] = useState<"IDLE" | "SUBMITTING" | "SUCCESS" | "ERROR">("IDLE");
 
-  // FORM HANDLING (Connects to Formspree)
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("SUBMITTING");
@@ -22,7 +21,6 @@ export default function ContactPage() {
     const data = new FormData(form);
 
     try {
-      // REPLACE 'xnjbajak' WITH YOUR ACTUAL ID if it changes
       const response = await fetch("https://formspree.io/f/xnjbajak", {
         method: "POST",
         body: data,
@@ -42,8 +40,7 @@ export default function ContactPage() {
     }
   }
 
-  // --- THE FIX IS HERE ---
-  // We strictly type the ease array so TypeScript knows it's a valid Bezier curve
+ 
   const formVariants = {
     hidden: { opacity: 0, x: 20 },
     visible: (i: number) => ({
@@ -52,7 +49,7 @@ export default function ContactPage() {
       transition: { 
         delay: 0.5 + i * 0.1, 
         duration: 0.8, 
-        // This cast fixes the build error:
+     
         ease: [0.22, 1, 0.36, 1] as [number, number, number, number] 
       }
     })
@@ -63,24 +60,24 @@ export default function ContactPage() {
       
       <div className="flex flex-col md:flex-row min-h-screen">
         
-        {/* LEFT SIDE: INFO & LOCATION */}
+    
         <div className="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-between border-b md:border-b-0 md:border-r border-[#333] relative">
             
-            {/* TOP AREA: BREADCRUMBS & TITLE */}
+            
             <div className="mt-10 md:mt-28">
-                {/* BREADCRUMBS */}
+               
                 <div className="flex items-center gap-2 font-mono text-xs text-gray-500 uppercase tracking-widest mb-12">
                     <Link href="/" className="hover:text-white transition-colors">HOME</Link>
                     <span>—</span>
                     <span className="text-white">CONTACT</span>
                 </div>
                 
-                {/* Canvas Background for Left Side */}
+                
                 <div className="absolute inset-0 pointer-events-none opacity-50 z-0">
                     <HeroCanvas/>
                 </div>
 
-                {/* TITLE */}
+             
                 <div className="relative z-10 font-oswald text-[12vw] md:text-[8vw] leading-[0.85] font-bold uppercase mix-blend-difference mb-8">
                     <TextReveal text="Let's" />
                     <TextReveal text="Talk" />
@@ -90,10 +87,10 @@ export default function ContactPage() {
                 </p>
             </div>
 
-            {/* CONTACT DETAILS */}
+           
             <div className="relative z-10 flex flex-col gap-10 md:gap-20 mb-10">
                 
-                {/* Location */}
+                
                 <div>
                     <span className="font-mono text-xs text-green-400 block mb-2">(CURRENTLY BASED IN)</span>
                     <h3 className="font-oswald text-2xl uppercase text-[#fff]">
@@ -102,7 +99,7 @@ export default function ContactPage() {
                     </h3>
                 </div>
 
-                {/* Social Links */}
+                
                 <div>
                     <span className="font-mono text-xs text-gray-100 block mb-4">(SOCIALS)</span>
                     <div className="flex flex-col gap-2 font-oswald text-xl uppercase">
@@ -116,7 +113,7 @@ export default function ContactPage() {
             </div>
         </div>
 
-        {/* RIGHT SIDE: THE FORM */}
+       
         <div className="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center bg-[#0a0a0a]">
              
              {status === "SUCCESS" ? (
@@ -137,7 +134,7 @@ export default function ContactPage() {
              ) : (
                 <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto flex flex-col gap-10">
                     
-                    {/* Name Field */}
+                   
                     <motion.div custom={0} variants={formVariants} initial="hidden" animate="visible" className="group relative">
                         <label className="font-mono text-xs text-gray-100 uppercase tracking-widest mb-2 block">Your Name</label>
                         <input 
@@ -149,7 +146,7 @@ export default function ContactPage() {
                         />
                     </motion.div>
 
-                    {/* Email Field */}
+                  
                     <motion.div custom={1} variants={formVariants} initial="hidden" animate="visible" className="group relative">
                         <label className="font-mono text-xs text-gray-100 uppercase tracking-widest mb-2 block">Your Email</label>
                         <input 
@@ -161,7 +158,7 @@ export default function ContactPage() {
                         />
                     </motion.div>
 
-                    {/* Message Field */}
+                    
                     <motion.div custom={2} variants={formVariants} initial="hidden" animate="visible" className="group relative">
                         <label className="font-mono text-xs text-gray-100 uppercase tracking-widest mb-2 block">Your Message</label>
                         <textarea 
@@ -173,7 +170,7 @@ export default function ContactPage() {
                         />
                     </motion.div>
 
-                    {/* Submit Button */}
+                   
                     <motion.button
                         custom={3} 
                         variants={formVariants} 
