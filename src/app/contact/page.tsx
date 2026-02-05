@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 import HeroCanvas from "@/components/HeroCanvas";
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ContactPage() {
@@ -22,7 +22,7 @@ export default function ContactPage() {
     const data = new FormData(form);
 
     try {
-      // REPLACE 'YOUR_FORMSPREE_ID' WITH YOUR ACTUAL ID from https://formspree.io/
+      // REPLACE 'xnjbajak' WITH YOUR ACTUAL ID if it changes
       const response = await fetch("https://formspree.io/f/xnjbajak", {
         method: "POST",
         body: data,
@@ -42,13 +42,19 @@ export default function ContactPage() {
     }
   }
 
-  // Staggered animation for the form fields
+  // --- THE FIX IS HERE ---
+  // We strictly type the ease array so TypeScript knows it's a valid Bezier curve
   const formVariants = {
     hidden: { opacity: 0, x: 20 },
     visible: (i: number) => ({
       opacity: 1,
       x: 0,
-      transition: { delay: 0.5 + i * 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }
+      transition: { 
+        delay: 0.5 + i * 0.1, 
+        duration: 0.8, 
+        // This cast fixes the build error:
+        ease: [0.22, 1, 0.36, 1] as [number, number, number, number] 
+      }
     })
   };
 
@@ -68,21 +74,26 @@ export default function ContactPage() {
                     <span>—</span>
                     <span className="text-white">CONTACT</span>
                 </div>
-                <HeroCanvas/>
+                
+                {/* Canvas Background for Left Side */}
+                <div className="absolute inset-0 pointer-events-none opacity-50 z-0">
+                    <HeroCanvas/>
+                </div>
+
                 {/* TITLE */}
-                <div className="font-oswald text-[12vw] md:text-[8vw] leading-[0.85] font-bold uppercase mix-blend-difference mb-8">
+                <div className="relative z-10 font-oswald text-[12vw] md:text-[8vw] leading-[0.85] font-bold uppercase mix-blend-difference mb-8">
                     <TextReveal text="Let's" />
                     <TextReveal text="Talk" />
                 </div>
-                <p className="font-inter text-gray-100 text-sm max-w-sm leading-relaxed">
+                <p className="relative z-10 font-inter text-gray-100 text-sm max-w-sm leading-relaxed">
                     Have a project in mind, a question, or just want to discuss the future of AI? I'm always open to new ideas and collaborations.
                 </p>
             </div>
 
-        
-            <div className="flex flex-col gap-10 md:gap-20 mb-10">
+            {/* CONTACT DETAILS */}
+            <div className="relative z-10 flex flex-col gap-10 md:gap-20 mb-10">
                 
-             
+                {/* Location */}
                 <div>
                     <span className="font-mono text-xs text-green-400 block mb-2">(CURRENTLY BASED IN)</span>
                     <h3 className="font-oswald text-2xl uppercase text-[#fff]">
