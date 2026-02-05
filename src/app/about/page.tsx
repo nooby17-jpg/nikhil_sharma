@@ -115,7 +115,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 w-full">
                 <ProjectCard id="01" title="3D Model Generation" tech="Python / AI / Deep Learning" image={`${BASE_PATH}/3dgen.jpg`} />
                 <ProjectCard id="02" title="Sign Language Translator" tech="LSTM / CNN / Comp. Vision" image={`${BASE_PATH}/sign.png`} />
-                <ProjectCard id="03" title="SpaceX Data Analysis" tech="Python / R / Data Viz" image={`${BASE_PATH}/space.jpg"`} />
+                <ProjectCard id="03" title="SpaceX Data Analysis" tech="Python / R / Data Viz" image={`${BASE_PATH}/space.jpg`} />
                 <ProjectCard id="04" title="Predictive Dashboard" tech="Python / React / D3.js" image={`${BASE_PATH}/aidash.jpg`} />
                 <ProjectCard id="05" title="Avya AI Medical Assistant" tech="Electron, Vite, Python, AI" image={`${BASE_PATH}/avya.jpg`} />
                 <ProjectCard id="06" title="Nikhil Portfolio" tech="Next.js / GSAP / WebGL" image={`${BASE_PATH}/portfolio.jpg`} />

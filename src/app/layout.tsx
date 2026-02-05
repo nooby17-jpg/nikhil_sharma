@@ -8,12 +8,13 @@ import Preloader from "@/components/Preloader"; // Import Preloader
 
 const oswald = Oswald({ subsets: ["latin"], variable: "--font-oswald" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-
+const BASE_PATH = '/nikhil_sharma';
 export const metadata: Metadata = {
+  
   title: "Nikhil Sharma | Data Science & Design",
   description: "Portfolio of Nikhil Sharma - ML Engineer & Creative Developer",
   icons: {
-    icon: "/favicon.jpg", 
+    icon: `${BASE_PATH}/2.png`, 
   },
 };
 
