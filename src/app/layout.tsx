@@ -8,12 +8,14 @@ import Preloader from "@/components/Preloader"; // Import Preloader
 
 const oswald = Oswald({ subsets: ["latin"], variable: "--font-oswald" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-
+const BASE_PATH = '/nikhil_sharma';
 export const metadata: Metadata = {
   
   title: "Nikhil Sharma | Data Science & Design",
   description: "Portfolio of Nikhil Sharma - ML Engineer & Creative Developer",
-
+  icons: {
+    icon: `${BASE_PATH}/icon.png`, 
+  },
 };
 
 export default function RootLayout({
