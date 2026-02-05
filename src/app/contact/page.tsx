@@ -40,7 +40,6 @@ export default function ContactPage() {
     }
   }
 
- 
   const formVariants = {
     hidden: { opacity: 0, x: 20 },
     visible: (i: number) => ({
@@ -49,7 +48,6 @@ export default function ContactPage() {
       transition: { 
         delay: 0.5 + i * 0.1, 
         duration: 0.8, 
-     
         ease: [0.22, 1, 0.36, 1] as [number, number, number, number] 
       }
     })
@@ -60,10 +58,10 @@ export default function ContactPage() {
       
       <div className="flex flex-col md:flex-row min-h-screen">
         
-    
+       
         <div className="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-between border-b md:border-b-0 md:border-r border-[#333] relative">
             
-            
+          
             <div className="mt-10 md:mt-28">
                
                 <div className="flex items-center gap-2 font-mono text-xs text-gray-500 uppercase tracking-widest mb-12">
@@ -72,12 +70,11 @@ export default function ContactPage() {
                     <span className="text-white">CONTACT</span>
                 </div>
                 
-                
+  
                 <div className="absolute inset-0 pointer-events-none opacity-50 z-0">
                     <HeroCanvas/>
                 </div>
 
-             
                 <div className="relative z-10 font-oswald text-[12vw] md:text-[8vw] leading-[0.85] font-bold uppercase mix-blend-difference mb-8">
                     <TextReveal text="Let's" />
                     <TextReveal text="Talk" />
@@ -87,10 +84,9 @@ export default function ContactPage() {
                 </p>
             </div>
 
-           
             <div className="relative z-10 flex flex-col gap-10 md:gap-20 mb-10">
                 
-                
+     
                 <div>
                     <span className="font-mono text-xs text-green-400 block mb-2">(CURRENTLY BASED IN)</span>
                     <h3 className="font-oswald text-2xl uppercase text-[#fff]">
@@ -99,7 +95,6 @@ export default function ContactPage() {
                     </h3>
                 </div>
 
-                
                 <div>
                     <span className="font-mono text-xs text-gray-100 block mb-4">(SOCIALS)</span>
                     <div className="flex flex-col gap-2 font-oswald text-xl uppercase">
@@ -113,7 +108,6 @@ export default function ContactPage() {
             </div>
         </div>
 
-       
         <div className="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center bg-[#0a0a0a]">
              
              {status === "SUCCESS" ? (
@@ -133,8 +127,7 @@ export default function ContactPage() {
                  </motion.div>
              ) : (
                 <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto flex flex-col gap-10">
-                    
-                   
+
                     <motion.div custom={0} variants={formVariants} initial="hidden" animate="visible" className="group relative">
                         <label className="font-mono text-xs text-gray-100 uppercase tracking-widest mb-2 block">Your Name</label>
                         <input 
@@ -146,7 +139,6 @@ export default function ContactPage() {
                         />
                     </motion.div>
 
-                  
                     <motion.div custom={1} variants={formVariants} initial="hidden" animate="visible" className="group relative">
                         <label className="font-mono text-xs text-gray-100 uppercase tracking-widest mb-2 block">Your Email</label>
                         <input 
@@ -158,7 +150,6 @@ export default function ContactPage() {
                         />
                     </motion.div>
 
-                    
                     <motion.div custom={2} variants={formVariants} initial="hidden" animate="visible" className="group relative">
                         <label className="font-mono text-xs text-gray-100 uppercase tracking-widest mb-2 block">Your Message</label>
                         <textarea 
@@ -169,8 +160,6 @@ export default function ContactPage() {
                             required 
                         />
                     </motion.div>
-
-                   
                     <motion.button
                         custom={3} 
                         variants={formVariants} 
@@ -198,7 +187,7 @@ export default function ContactPage() {
   );
 }
 
-// Helper Component for Social Links
+
 function SocialLink({ href, label }: { href: string, label: string }) {
     return (
         <Link 
